@@ -75,6 +75,31 @@ const getMaterial = async (req: Request, res: Response) => {
   }
 };
 
+const getMaterialByKey = async (req: Request, res: Response) => {
+  await connectMongo('materials');
+
+  try {
+    const materialsData = await MaterialsSchema.findOne({
+      key: req.params.key ?? "",
+    });
+
+    let code = materialsData ? 200 : 404;
+    let msg = materialsData ? "Data successfully retrieved" : "No data found";
+
+    res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+    res.status(code).json({
+      status: code,
+      message: msg,
+      data: materialsData,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      message: error,
+    });
+  }
+};
+
 const deleteMaterial = async (req: Request, res: Response) => {
   await connectMongo('materials');
 
@@ -117,6 +142,9 @@ const updateMaterial = async (req: Request, res: Response) => {
       { new: true }
     );
 
+    console.log(req.params.key);
+    console.log(req.body.name)
+
     let msg = updated ? "Data successfully updated" : "No data found";
     let code = updated ? 200 : 404;
 
@@ -141,4 +169,4 @@ const updateMaterial = async (req: Request, res: Response) => {
   }
 };
 
-export { createMaterial, getMaterial, deleteMaterial, updateMaterial };
+export { createMaterial, getMaterial, getMaterialByKey, deleteMaterial, updateMaterial };

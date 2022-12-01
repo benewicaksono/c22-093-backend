@@ -3,9 +3,10 @@ import dotenv from "dotenv";
 import connectDB from "./db/ConnectMongo";
 import MaterialRouter from "./routes/MaterialsRouter";
 
+const bodyParser = require('body-parser')
 const app: Application = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/material', MaterialRouter);
 
