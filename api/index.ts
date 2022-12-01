@@ -1,9 +1,13 @@
 import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
+import connectDB from "./db/ConnectMongo";
+import MaterialRouter from "./routes/MaterialsRouter";
 
 const app: Application = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/api/material', MaterialRouter);
 
 app.get("/api", (req: Request, res: Response) => {
   res.setHeader("Content-Type", "application/json");
