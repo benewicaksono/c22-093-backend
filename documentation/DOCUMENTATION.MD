@@ -66,3 +66,75 @@ https://c22-093-backend.vercel.app/api/material/${key}
 ```
 https://c22-093-backend.vercel.app/api/material/${key}
 ```
+<br><br>
+
+## User Data
+<hr>
+
+### `GET` - Get All Users
+```
+https://c22-093-backend.vercel.app/api/userData/users
+```
+
+#### Example Response
+```
+[
+    {
+        "_id": "638eae125e32b3ce7b84265b",
+        "name": "Cap Cut",
+        "isAdmin": false,
+        "createdAt": "2022-12-06T02:50:58.303Z",
+        "updatedAt": "2022-12-06T02:50:58.303Z",
+        "__v": 0
+    }
+]
+```
+<br>
+
+### `GET` - Get User By Email
+```
+https://c22-093-backend.vercel.app/api/userData/users/${email}
+```
+<br>
+
+### `POST` - Create User
+```
+https://c22-093-backend.vercel.app/api/userData/users/
+```
+
+#### Example Body JSON
+``` 
+...
+{
+    "name": "Cap Cut",
+    "email": "capcae@gmail.com",
+    "password": "123123123"
+}
+...
+```
+<br>
+
+### `POST` - Create Session
+```
+https://c22-093-backend.vercel.app/api/userData/session/
+```
+
+#### Example Body JSON
+``` 
+...
+{
+    "email": "test@gmail.com",
+    "password": "12345678"
+}
+```
+
+#### Example Response
+```
+{
+    "_id": "638ec346261d80f9070bdb17",
+    "name": "testing",
+    "email": "test@gmail.com",
+    "access_token": "1b7d71028f1c9e45d5aee63d1e14eb24d9b0d69d9f4fc4e16d67c8d8b302"
+}
+```
+<br>

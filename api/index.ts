@@ -2,13 +2,17 @@ import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/ConnectMongo";
 import MaterialRouter from "./routes/MaterialsRouter";
+import UserDataRouter from "./routes/UserRouter";
 
 const bodyParser = require('body-parser')
 const app: Application = express();
+var cors = require('cors');
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/material', MaterialRouter);
+app.use('/api/userData', UserDataRouter);
 
 app.get("/api", (req: Request, res: Response) => {
   res.setHeader("Content-Type", "application/json");
