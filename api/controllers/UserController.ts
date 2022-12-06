@@ -3,9 +3,12 @@ import User from '../models/UserSchema';
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 import bcryptConfig from '../config/bcrypt';
+import connectMongo from '../db/ConnectMongo';
 
 const userController = {
     create: async (req: Request, res: Response) => {
+        await connectMongo('users');
+
         try {
             const { name, email, isAdmin, password: passwordBody } = req.body;
 
@@ -34,6 +37,8 @@ const userController = {
     },
 
     login: async (req: Request, res: Response) => {
+        await connectMongo('users');
+
         try {
             const { email, password } = req.body;
 
@@ -60,15 +65,16 @@ const userController = {
     },
 
     select: async (req: Request, res: Response) => {
+        await connectMongo('users');
+        
         try {
-            const { id: _id } = req.params;
+            const { email: email } = req.params;
             const noSelect = [
                 "-password",
-                "-email",
                 "-access_token",
             ];
-            if (_id) {
-                const user = await User.findOne({ _id }, noSelect).exec();
+            if (email) {
+                const user = await User.findOne({ email }, noSelect).exec();
                 return res.status(200).json(user);
             } else {
                 const users = await User.find({}, noSelect).exec();
