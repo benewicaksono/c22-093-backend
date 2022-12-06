@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.get("/users", userController.select);
-router.get("/users/:id", userController.select);
+router.get("/users/:email", userController.select);
 router.post("/users", userController.create);
 
 router.post("/session", userController.login);
