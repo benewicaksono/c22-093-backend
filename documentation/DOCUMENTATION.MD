@@ -125,5 +125,15 @@ https://c22-093-backend.vercel.app/api/userData/session/
     "email": "capcae@gmail.com",
     "password": "123123123"
 }
-...
 ```
+
+#### Example Response
+```
+{
+    "_id": "638ec346261d80f9070bdb17",
+    "name": "testing",
+    "email": "test@gmail.com",
+    "access_token": "1b7d71028f1c9e45d5aee63d1e14eb24d9b0d69d9f4fc4e16d67c8d8b302"
+}
+```
+<br>
