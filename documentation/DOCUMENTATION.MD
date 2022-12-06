@@ -111,3 +111,19 @@ https://c22-093-backend.vercel.app/api/userData/users/
 }
 ...
 ```
+<br>
+
+### `POST` - Create Session
+```
+https://c22-093-backend.vercel.app/api/userData//session/
+```
+
+#### Example Body JSON
+``` 
+...
+{
+    "email": "capcae@gmail.com",
+    "password": "123123123"
+}
+...
+```
