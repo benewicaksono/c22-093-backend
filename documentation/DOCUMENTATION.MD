@@ -90,9 +90,9 @@ https://c22-093-backend.vercel.app/api/userData/users
 ```
 <br>
 
-### `GET` - Get User By Id
+### `GET` - Get User By Email
 ```
-https://c22-093-backend.vercel.app/api/userData/users/:{id}
+https://c22-093-backend.vercel.app/api/userData/users/${email}
 ```
 <br>
 
@@ -115,7 +115,7 @@ https://c22-093-backend.vercel.app/api/userData/users/
 
 ### `POST` - Create Session
 ```
-https://c22-093-backend.vercel.app/api/userData//session/
+https://c22-093-backend.vercel.app/api/userData/session/
 ```
 
 #### Example Body JSON
