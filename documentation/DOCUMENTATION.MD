@@ -122,8 +122,8 @@ https://c22-093-backend.vercel.app/api/userData/session/
 ``` 
 ...
 {
-    "email": "capcae@gmail.com",
-    "password": "123123123"
+    "email": "test@gmail.com",
+    "password": "12345678"
 }
 ```
 
