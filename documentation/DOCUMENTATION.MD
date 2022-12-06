@@ -66,3 +66,48 @@ https://c22-093-backend.vercel.app/api/material/${key}
 ```
 https://c22-093-backend.vercel.app/api/material/${key}
 ```
+
+## User Data
+<hr>
+
+### `GET` - Get All Users
+```
+https://c22-093-backend.vercel.app/api/userData/users
+```
+
+#### Example Response
+```
+[
+    {
+        "_id": "638eae125e32b3ce7b84265b",
+        "name": "Cap Cut",
+        "isAdmin": false,
+        "createdAt": "2022-12-06T02:50:58.303Z",
+        "updatedAt": "2022-12-06T02:50:58.303Z",
+        "__v": 0
+    }
+]
+```
+<br>
+
+### `GET` - Get User By Id
+```
+https://c22-093-backend.vercel.app/api/userData/users/:{id}
+```
+<br>
+
+### `POST` - Create User
+```
+https://c22-093-backend.vercel.app/api/userData/users/
+```
+
+#### Example Body JSON
+``` 
+...
+{
+    "name": "Cap Cut",
+    "email": "capcae@gmail.com",
+    "password": "123123123"
+}
+...
+```
