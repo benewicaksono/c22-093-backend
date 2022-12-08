@@ -10,6 +10,7 @@ router.get("/users/:email", userController.select);
 router.post("/users", userController.create);
 
 router.post("/session", userController.login);
+router.get("/session/:access_token", userController.selectFromToken);
 
 
 export default router;
