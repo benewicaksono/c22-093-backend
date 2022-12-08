@@ -138,3 +138,8 @@ https://c22-093-backend.vercel.app/api/userData/session/
 }
 ```
 <br>
+
+### `GET` - Get User By Access Token
+```
+https://c22-093-backend.vercel.app/api/userData/session/${access_token}
+```
