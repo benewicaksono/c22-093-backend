@@ -84,6 +84,26 @@ const userController = {
             return res.status(500).json({ message: "Internal Server Error" });
         }
     },
+
+    selectFromToken: async (req: Request, res: Response) => {
+        await connectMongo('users');
+        
+        try {
+            const { access_token: access_token } = req.params;
+            const noSelect = [
+                "-password",
+            ];
+            if (access_token) {
+                const user = await User.findOne({ access_token }, noSelect).exec();
+                return res.status(200).json(user);
+            } else {
+                const users = await User.find({}, noSelect).exec();
+                return res.status(200).json(users);
+            }
+        } catch (err) {
+            return res.status(500).json({ message: "Internal Server Error" });
+        }
+    },
 };
 
 export default userController;
