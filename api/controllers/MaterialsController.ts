@@ -33,7 +33,9 @@ const createMaterial = async (req: Request, res: Response) => {
           _id: created?._id,
           key: created?.key,
           name: created?.name,
+          desc: created?.desc,
           driveUrl: created?.driveUrl,
+          imgUrl: created?.imgUrl,
           __v: created?.__v,
         },
       });
@@ -142,9 +144,6 @@ const updateMaterial = async (req: Request, res: Response) => {
       { new: true }
     );
 
-    console.log(req.params.key);
-    console.log(req.body.name)
-
     let msg = updated ? "Data successfully updated" : "No data found";
     let code = updated ? 200 : 404;
 
@@ -157,7 +156,9 @@ const updateMaterial = async (req: Request, res: Response) => {
             _id: updated?._id,
             key: updated?.key,
             name: updated?.name,
+            desc: updated?.desc,
             driveUrl: updated?.driveUrl,
+            imgUrl: updated?.imgUrl,
             __v: updated?.__v,
         } ?? {},
     });

@@ -1,6 +1,5 @@
 import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
-import connectDB from "./db/ConnectMongo";
 import MaterialRouter from "./routes/MaterialsRouter";
 import UserDataRouter from "./routes/UserRouter";
 
