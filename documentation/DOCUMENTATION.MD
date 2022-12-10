@@ -179,3 +179,59 @@ https://c22-093-backend.vercel.app/api/userData/session/
 ```
 https://c22-093-backend.vercel.app/api/userData/session/${access_token}
 ```
+
+<br><br>
+
+## Review
+
+<hr>
+
+### `POST` - Create Review
+
+```
+https://c22-093-backend.vercel.app/api/review/
+```
+
+#### Example Body JSON
+
+```
+...
+{
+    "name": "Lorem",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat pretium nibh ipsum consequat nisl vel pretium. Vitae congue mauris rhoncus aenean vel. Arcu non sodales neque sodales ut etiam sit amet. Amet purus gravida quis blandit turpis cursus in hac. Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Urna et pharetra pharetra massa. Amet justo donec enim diam vulputate ut. Quisque id diam vel quam elementum pulvinar. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Hac habitasse platea dictumst vestibulum rhoncus est. Viverra nam libero justo laoreet sit. Egestas congue quisque egestas diam in arcu cursus euismod. Nulla facilisi cras fermentum odio eu feugiat. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Adipiscing commodo elit at imperdiet dui. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. A cras semper auctor neque vitae tempus quam pellentesque nec. Amet porttitor eget dolor morbi non arcu risus quis. Ut consequat semper viverra nam libero justo laoreet sit amet.",
+    "stars": "6"
+}
+...
+```
+
+<br>
+
+### `GET` - Get All Review
+
+```
+https://c22-093-backend.vercel.app/api/review/
+```
+
+#### Example Response
+
+```
+[
+        {
+            "_id": "63936d1947daf7a78f9b87eb",
+            "name": "Lorem",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat pretium nibh ipsum consequat nisl vel pretium. Vitae congue mauris rhoncus aenean vel. Arcu non sodales neque sodales ut etiam sit amet. Amet purus gravida quis blandit turpis cursus in hac. Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Urna et pharetra pharetra massa. Amet justo donec enim diam vulputate ut. Quisque id diam vel quam elementum pulvinar. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. Hac habitasse platea dictumst vestibulum rhoncus est. Viverra nam libero justo laoreet sit. Egestas congue quisque egestas diam in arcu cursus euismod. Nulla facilisi cras fermentum odio eu feugiat. Eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Adipiscing commodo elit at imperdiet dui. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. A cras semper auctor neque vitae tempus quam pellentesque nec. Amet porttitor eget dolor morbi non arcu risus quis. Ut consequat semper viverra nam libero justo laoreet sit amet.",
+            "stars": 6,
+            "__v": 0
+        }
+    ]
+```
+
+<br>
+
+### `GET` - Get Review by Id
+
+```
+https://c22-093-backend.vercel.app/api/userData/users/${id}
+```
+
+<br>

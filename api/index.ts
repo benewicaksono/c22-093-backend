@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import MaterialRouter from "./routes/MaterialsRouter";
 import UserDataRouter from "./routes/UserRouter";
+import ReviewRouter from "./routes/ReviewRoutes"
 
 const bodyParser = require('body-parser')
 const app: Application = express();
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/material', MaterialRouter);
 app.use('/api/userData', UserDataRouter);
+app.use('/api/review', ReviewRouter);
 
 app.get("/api", (req: Request, res: Response) => {
   res.setHeader("Content-Type", "application/json");
